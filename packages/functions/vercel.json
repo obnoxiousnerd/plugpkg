@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "routes": [
+    { "src": "/(.*)", "dest": "/api/index" },
+    { "src": "/(?<file>[^/]+)", "dest": "/api/$file" },
+    { "src": "/(?<file>[^/]+)/(.*)", "dest": "/api/$file" },
+    { "src": "/(.*)", "dest": "/api/404" }
+  ]
+}

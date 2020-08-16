@@ -1,0 +1,14 @@
+{
+  "Serverless Lambda": {
+    "prefix": ["lambda"],
+    "body": [
+      "import {NowRequest, NowResponse} from \"@vercel/node\";",
+      "import allowCors from \"../util/allowCors\";",
+      "const handler = async (req: NowRequest, res: NowResponse) => {",
+      "$0",
+      "}",
+      "export default allowCors(handler);"
+    ],
+    "description": "Create a serverless lambda function."
+  }
+}

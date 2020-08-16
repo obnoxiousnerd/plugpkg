@@ -1,0 +1,24 @@
+@import '~@angular/material/theming'
+.app-sidenav
+    width: 20%
+    user-select: none
+    padding: 15px
+
+.app-content
+    height: calc( 100vh - 64px )
+    min-height: calc( 100vh - 64px )
+
+.nav-icon
+    padding-right: .25em
+
+.progress-bar-wrap
+    padding-top: 64px
+
+@media screen and ( max-width: 576px )
+    .app-sidenav
+        width: 60%
+    .progress-bar-wrap
+        padding-top: 56px
+    .app-content
+        height: calc( 100vh - 56px )
+        min-height: calc( 100vh - 56px )

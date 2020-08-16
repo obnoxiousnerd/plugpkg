@@ -1,0 +1,30 @@
+{
+  "name": "functions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "api/index.ts",
+  "module": "api/index.ts",
+  "scripts": {
+    "vercel-build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pranav Karawale",
+  "engines": {
+    "node": "12.x"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@vercel/node": "^1.7.4",
+    "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "firebase-admin": "^9.0.0",
+    "modofun": "^1.2.2",
+    "router": "^1.3.5",
+    "serverless-http": "^2.5.0",
+    "url-pattern": "^1.0.3"
+  }
+}

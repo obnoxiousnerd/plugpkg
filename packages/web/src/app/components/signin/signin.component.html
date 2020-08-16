@@ -1,0 +1,78 @@
+<div class="sign-cards">
+  <mat-card class="mat-typography signup">
+    <mat-card-title class="mat-h1">Sign up</mat-card-title>
+    <mat-form-field>
+      <mat-label>Username</mat-label>
+      <mat-error>Username is required</mat-error>
+      <input
+        type="text"
+        [(ngModel)]="signUpOpts.username"
+        matInput
+        required
+        placeholder="yourself"
+      />
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <mat-error>E-mail is required</mat-error>
+      <input
+        type="email"
+        [(ngModel)]="signUpOpts.email"
+        matInput
+        required
+        placeholder="yourself@domain.tld"
+      />
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <mat-error>Password is required</mat-error>
+      <input
+        matInput
+        placeholder="Password"
+        [type]="'password'"
+        required
+        [(ngModel)]="signUpOpts.pass"
+      />
+    </mat-form-field>
+    <br />
+    <button mat-stroked-button [color]="'primary'" (click)="signUp()">
+      Sign up
+    </button>
+  </mat-card>
+  <br />
+  <mat-card class="mat-typography signin">
+    <mat-card-title class="mat-h1">Sign-in</mat-card-title>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input
+        type="email"
+        [(ngModel)]="signInOpts.email"
+        matInput
+        placeholder="yourself@domain.tld"
+      />
+    </mat-form-field>
+    <!-- <br />
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <mat-error>Password is required</mat-error>
+      <input
+        matInput
+        placeholder="Password"
+        [type]="'password'"
+        required
+        [(ngModel)]="signInOpts.pass"
+      />
+    </mat-form-field> -->
+    <br />
+    <button
+      mat-stroked-button
+      [disabled]="emailSent"
+      [color]="'primary'"
+      (click)="sendSignInLink()"
+    >
+      Sign in
+    </button>
+  </mat-card>
+</div>

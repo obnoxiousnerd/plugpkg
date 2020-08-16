@@ -1,0 +1,40 @@
+{
+  "name": "cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm-run-all build:*",
+    "build:code:rollup": "rollup -c rollup.config.ts",
+    "build:code": "ts-node-script scripts/code-prod.ts",
+    "build:binary": "ts-node-script scripts/pack.ts",
+    "build:binary:modifybase": "ts-node-script scripts/modify-base-binary.ts",
+    "build:gzip": "ts-node-script scripts/gzip.ts",
+    "watch:code": "ts-node-script scripts/code-dev.ts",
+    "watch:code:rollup": "rollup -c rollup.config.ts --watch"
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.5",
+    "@types/inquirer": "^6.5.0",
+    "chokidar": "^3.4.1",
+    "esbuild": "^0.6.8",
+    "nexe": "^3.3.7",
+    "npm-run-all": "^4.1.5",
+    "rcedit": "^2.2.0",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cac": "^6.6.1",
+    "conf": "^7.1.2",
+    "debug": "^4.1.1",
+    "dotenv": "^8.2.0",
+    "inquirer": "^7.3.2",
+    "kleur": "^4.0.2",
+    "ora": "^4.0.5",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "author": "",
+  "license": "ISC"
+}

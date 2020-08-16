@@ -1,0 +1,27 @@
+.landing-svg
+  user-select: none
+  height: 100%
+  width: 100%
+  position: absolute
+  top: 0
+  z-index: -2
+  object-fit: cover
+
+.content
+  user-select: none
+  padding-left: 0.25em
+  width: 80%
+  height: 100%
+
+.hero-head
+  font-weight: 100
+  margin-block-end: 32px
+
+.content-body
+  padding-top: 10%
+
+@media screen and (max-width: 768px)
+  .content
+    width: calc(100% - 0.25em)
+    .content-body
+      padding-top: 30%

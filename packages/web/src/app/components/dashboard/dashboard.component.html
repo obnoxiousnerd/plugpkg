@@ -1,0 +1,68 @@
+<div *ngIf="!hasError" class="app-dashboard">
+  <mat-card [class.mat-elevation-z8]="true" class="mat-typography user-card">
+    <mat-card-title style="text-align: left !important;"
+      >About yourself</mat-card-title
+    >
+    <button mat-icon-button class="edit" (click)="editProfile()">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <img
+      alt="User Avatar"
+      class="avatar"
+      src="{{ user.photoURL }}"
+      height="150"
+    />
+    <h1>{{ userProfile.displayName }}</h1>
+    <p>{{ userProfile.description }}</p>
+    <button
+      (click)="copyAccessToken()"
+      class="access-token-wrap"
+      mat-stroked-button
+      [color]="'accent'"
+    >
+      Get your access token
+    </button>
+  </mat-card>
+  <br />
+  <mat-card class="mat-typography user-scopes" [class.mat-elevation-z8]="true">
+    <mat-card-title>Your Scopes</mat-card-title>
+    <ng-template #loadingScopes>
+      <mat-card-content [hidden]="userScopes && userScopes.scopes">
+        <mat-progress-bar
+          class="loading-scopes-progress"
+          [mode]="'indeterminate'"
+          [color]="'accent'"
+        ></mat-progress-bar>
+      </mat-card-content>
+    </ng-template>
+    <mat-card-content
+      *ngIf="userScopes && userScopes.scopes; else loadingScopes"
+    >
+      <div *ngFor="let scope of userScopes.scopes">
+        <b>{{ scope.name }}</b>
+        <p>Role: {{ scope.role }}</p>
+      </div>
+    </mat-card-content>
+    <mat-card-content *ngIf="userScopes === null">
+      <div style="text-align: center;">
+        <b
+          >Scopes are special containers where you can publish your modules. For
+          example, if you own a scope named <code>foo</code> and publish a
+          module <code>bar</code>, then the module's name will be displayed as
+          <code>@foo/bar</code>.
+        </b>
+        <br />
+        You don't own or have write access to any scope. Let's create one!
+        <br />
+        <button (click)="registerScope()" mat-stroked-button [color]="'accent'">
+          Create a scope
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+<mat-card *ngIf="hasError" class="mat-typography">
+  <h1>
+    An error occured while doing some work. Please try again after some time.
+  </h1>
+</mat-card>

@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "commonjs",
+    "outDir": "lib"
+  },
+  "include": ["util/**/*", "api/**/*"],
+  "exclude": ["node_modules"]
+}

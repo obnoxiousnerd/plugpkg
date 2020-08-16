@@ -1,0 +1,42 @@
+<mat-sidenav-container fullscreen>
+  <mat-sidenav
+    #appMenu
+    [mode]="'open'"
+    class="app-sidenav"
+    [position]="'start'"
+  >
+    <mat-nav-list>
+      <a mat-list-item routerLink="/signin">
+        <mat-icon class="nav-icon"> verified_user </mat-icon>
+        Sign in
+      </a>
+      <a *ngIf="authService.loggedIn" mat-list-item routerLink="/dashboard">
+        <mat-icon class="nav-icon"> dashboard </mat-icon>
+        Dashboard
+      </a>
+      <a
+        *ngIf="authService.loggedIn"
+        mat-list-item
+        (click)="authService.logout()"
+      >
+        <mat-icon class="nav-icon"> person_remove </mat-icon>
+        Log out
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-navbar [title]="title" [appMenu]="appMenu"></app-navbar>
+    <div class="progress-bar-wrap">
+      <mat-progress-bar
+        #progressBar
+        *ngIf="loading"
+        color="accent"
+        mode="indeterminate"
+      >
+      </mat-progress-bar>
+    </div>
+    <div class="app-content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
